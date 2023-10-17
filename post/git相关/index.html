@@ -1,0 +1,317 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Git 相关规范 - zsh&#39;blog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Git 相关 Commit 一个好的 Commit Message 规范可以使 Commit Message 的可读性更好，并且可以实现自动化。那究竟如何写一个易读的 Commit Message 呢？
+在 Angular 规范中，Commit Message 包含三个部分，分别是 Header、Body 和 Footer， 格式如下：
+其中，Header 是必需的， Body 和 Footer 可以省略。在以上规范中，必须用括号（）括起来， ［］后必须紧跟冒号，冒号后必须紧跟空格，2个空行也是必需的。
+Header Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。
+type是用来说明commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：
+Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。 Production：这类修改会影响最终的用户和生产环境的代码。所以对于这种改动，我们一定要慎重，并在提交前做好充分的测试。 以下列出一些常用的type、类别，在提交的时候请务必注意
+feat: Production 新增功能 fix: Production Bug 修复 docs: Development 文档更新 chore: Development 构建流程、辅助工具 Body Body 部分可以分成多行，而且格式也比较自由。不过，和 Header 里的一样，它也要以动词开头，使用现在时。此外，它还必须要包括修改的动机，以及和跟上一版本相比的改动点。
+Footer Footer 部分不是必选的，可以根据需要来选择，主要用来说明本次 commit 导致的后果。在实际应用中，Footer 通常用来说明不兼容的改动和关闭的Issue 列表。
+未完 " />
+  <meta name="author" content="zsh&#39;blog" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://ursasi.github.io/main.min.css" />
+
+  
+  <script
+    defer
+    src="https://ursasi.github.io/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+   
+  <link rel="preload" as="image" href="https://ursasi.github.io/theme.png" />
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  <link rel="icon" href="https://ursasi.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://ursasi.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.119.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="Git 相关规范">
+<meta itemprop="description" content="Git 相关 Commit 一个好的 Commit Message 规范可以使 Commit Message 的可读性更好，并且可以实现自动化。那究竟如何写一个易读的 Commit Message 呢？
+在 Angular 规范中，Commit Message 包含三个部分，分别是 Header、Body 和 Footer， 格式如下：
+其中，Header 是必需的， Body 和 Footer 可以省略。在以上规范中，必须用括号（）括起来， ［］后必须紧跟冒号，冒号后必须紧跟空格，2个空行也是必需的。
+Header Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。
+type是用来说明commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：
+Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。 Production：这类修改会影响最终的用户和生产环境的代码。所以对于这种改动，我们一定要慎重，并在提交前做好充分的测试。 以下列出一些常用的type、类别，在提交的时候请务必注意
+feat: Production 新增功能 fix: Production Bug 修复 docs: Development 文档更新 chore: Development 构建流程、辅助工具 Body Body 部分可以分成多行，而且格式也比较自由。不过，和 Header 里的一样，它也要以动词开头，使用现在时。此外，它还必须要包括修改的动机，以及和跟上一版本相比的改动点。
+Footer Footer 部分不是必选的，可以根据需要来选择，主要用来说明本次 commit 导致的后果。在实际应用中，Footer 通常用来说明不兼容的改动和关闭的Issue 列表。
+未完 "><meta itemprop="datePublished" content="2023-10-11T21:25:22+08:00" />
+<meta itemprop="dateModified" content="2023-10-11T21:25:22+08:00" />
+<meta itemprop="wordCount" content="70">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git 相关规范"/>
+<meta name="twitter:description" content="Git 相关 Commit 一个好的 Commit Message 规范可以使 Commit Message 的可读性更好，并且可以实现自动化。那究竟如何写一个易读的 Commit Message 呢？
+在 Angular 规范中，Commit Message 包含三个部分，分别是 Header、Body 和 Footer， 格式如下：
+其中，Header 是必需的， Body 和 Footer 可以省略。在以上规范中，必须用括号（）括起来， ［］后必须紧跟冒号，冒号后必须紧跟空格，2个空行也是必需的。
+Header Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。
+type是用来说明commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：
+Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。 Production：这类修改会影响最终的用户和生产环境的代码。所以对于这种改动，我们一定要慎重，并在提交前做好充分的测试。 以下列出一些常用的type、类别，在提交的时候请务必注意
+feat: Production 新增功能 fix: Production Bug 修复 docs: Development 文档更新 chore: Development 构建流程、辅助工具 Body Body 部分可以分成多行，而且格式也比较自由。不过，和 Header 里的一样，它也要以动词开头，使用现在时。此外，它还必须要包括修改的动机，以及和跟上一版本相比的改动点。
+Footer Footer 部分不是必选的，可以根据需要来选择，主要用来说明本次 commit 导致的后果。在实际应用中，Footer 通常用来说明不兼容的改动和关闭的Issue 列表。
+未完 "/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://ursasi.github.io/"
+      >zsh&#39;blog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Git 相关规范</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Oct 11, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="git-相关">Git 相关</h1>
+<h1 id="commit">Commit</h1>
+<p>一个好的 Commit Message 规范可以使 Commit Message 的可读性更好，并且可以实现自动化。那究竟如何写一个易读的 Commit Message 呢？</p>
+<p>在 Angular 规范中，Commit Message 包含三个部分，分别是 Header、Body 和 Footer， 格式如下：</p>
+<p><img src="/img/message%E4%B8%BE%E4%BE%8B.png" alt="pic"></p>
+<p>其中，Header 是必需的， Body 和 Footer 可以省略。在以上规范中，必须用括号（）括起来， <!-- raw HTML omitted -->［<!-- raw HTML omitted -->］后必须紧跟冒号，冒号后必须紧跟空格，2个空行也是必需的。</p>
+<h2 id="header">Header</h2>
+<p>Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。</p>
+<p>type是用来说明commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：</p>
+<ul>
+<li>Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。</li>
+<li>Production：这类修改会影响最终的用户和生产环境的代码。所以对于这种改动，我们一定要慎重，并在提交前做好充分的测试。</li>
+</ul>
+<p>以下列出一些常用的type、类别，在提交的时候请务必注意</p>
+<ul>
+<li>feat: Production 新增功能</li>
+<li>fix: Production Bug 修复</li>
+<li>docs: Development 文档更新</li>
+<li>chore: Development 构建流程、辅助工具</li>
+</ul>
+<h2 id="body">Body</h2>
+<p>Body 部分可以分成多行，而且格式也比较自由。不过，和 Header 里的一样，它也要以动词开头，使用现在时。此外，它还必须要包括修改的动机，以及和跟上一版本相比的改动点。</p>
+<h2 id="footer">Footer</h2>
+<p>Footer 部分不是必选的，可以根据需要来选择，主要用来说明本次 commit 导致的后果。在实际应用中，Footer 通常用来说明不兼容的改动和关闭的Issue 列表。</p>
+<h2 id="未完">未完</h2>
+</section>
+
+  
+  
+
+  
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://ursasi.github.io/post/%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%8E%AF%E5%A2%83%E8%BF%9E%E6%8E%A5%E6%9C%BA%E6%88%BF%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%9B%98%E6%89%A7%E8%A1%8C%E6%89%93%E5%8D%B0%E4%BB%BB%E5%8A%A1/"
+      ><span class="mr-1.5">←</span><span>校园网环境连接机房、实验室网盘、执行打印任务</span></a
+    >
+    
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="https://ursasi.github.io/">zsh&#39;blog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
