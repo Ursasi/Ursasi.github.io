@@ -341,11 +341,11 @@ Raft有很多实现，并且运用在很多领域，但这并不意味着Raft是
 <p>单节点变更就是扩容的时候每次扩容一个节点，直到全部节点上线完毕。</p>
 <p>单节点变更的原理在于，扩容节点对于“大多数”的认知与旧节点对于“大多数”的认知必然有重合，因此重合点在选举中就至关重要，Raft 规则中的一个节点一票的限制，确保了只会有一个节点产生。</p>
 <p><strong>单节点变更正确的证明如下：</strong>
-此假设原有节点数目为 $x$，新增节点为$y$，因此旧节点的“大多数”为 $\lfloor\frac{x}{2}\rfloor + 1$ 新节点的“大多数”为 $\lfloor\frac{x + y}{2}\rfloor + 1$。若下式成立说明出现重合。
-$$\lfloor\frac{x}{2}\rfloor + 1 + \lfloor\frac{x + y}{2}\rfloor + 1 &gt; x + y$$
-对于给定的$x$,满足下式：
-$$\alpha{y}-b &lt; 0$$
-其中，$\alpha$为系数，$b$为给定$x$之后的常数。且$\lfloor\frac{y}{2}\rfloor\leq\frac{y}{2}$，因此$\alpha$恒大于0，为一单调递增函数，$y$有上限。</p>
+此假设原有节点数目为 <!-- raw HTML omitted -->$x$<!-- raw HTML omitted -->，新增节点为<!-- raw HTML omitted -->$y$<!-- raw HTML omitted -->，因此旧节点的“大多数”为 <!-- raw HTML omitted -->$\lfloor\frac{x}{2}\rfloor + 1$ <!-- raw HTML omitted -->新节点的“大多数”为 <!-- raw HTML omitted -->$\lfloor\frac{x + y}{2}\rfloor + 1$<!-- raw HTML omitted -->。若下式成立说明出现重合。
+<!-- raw HTML omitted -->$$\lfloor\frac{x}{2}\rfloor + 1 + \lfloor\frac{x + y}{2}\rfloor + 1 &gt; x + y$$<!-- raw HTML omitted -->
+对于给定的<!-- raw HTML omitted -->$x$<!-- raw HTML omitted -->,满足下式：
+<!-- raw HTML omitted -->$$\alpha{y}-b &lt; 0$$<!-- raw HTML omitted -->
+其中，<!-- raw HTML omitted -->$\alpha$<!-- raw HTML omitted -->为系数，<!-- raw HTML omitted -->$b$<!-- raw HTML omitted -->为给定<!-- raw HTML omitted -->$x$<!-- raw HTML omitted -->之后的常数。且<!-- raw HTML omitted -->$\lfloor\frac{y}{2}\rfloor\leq\frac{y}{2}$<!-- raw HTML omitted -->，因此<!-- raw HTML omitted -->$\alpha$<!-- raw HTML omitted -->恒大于0，为一单调递增函数，$y$有上限。</p>
 <p>而单节点变更，即$y = 1$的时候无论原节点数量为多少，均满足上式，因此单节点变更会出现重合。</p>
 <p>实际上，我并不认为缩容的时候会发生什么异常情况，缩容对于系统来说就是发生了网络分区，网络分区节点不包含主节点的时候，无事发生，主节点知道谁掉线了，其他节点也不需要感知，这时候本身就不会发生选举过程。如果网络分区包含主节点，这时候发起选举的节点数目仍然为 $\frac{N}{2} + 1$ ，所以对于缩容或者网络分区来讲是有最大的缩容/网络分区的限制的，超过这个限制的时候，发起选举的节点将不会获得足够的投票，进而没有leader的产生，可用性受到影响。因此实际上我们并不关注每次缩容多少个不会产生影响，而关注最多可以缩容多少个。
 $$ 2f + 1 = N \ f = (N - 1) / 2$$</p>
