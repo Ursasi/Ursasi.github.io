@@ -6,7 +6,16 @@
     <description>Recent content in Posts on zsh&#39;blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Oct 2023 20:10:29 +0800</lastBuildDate><atom:link href="https://ursasi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 10:15:19 +0800</lastBuildDate><atom:link href="https://ursasi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>换位思考与信息差</title>
+      <link>https://ursasi.github.io/post/%E6%8D%A2%E4%BD%8D%E6%80%9D%E8%80%83%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%B7%AE/</link>
+      <pubDate>Thu, 19 Oct 2023 10:15:19 +0800</pubDate>
+      
+      <guid>https://ursasi.github.io/post/%E6%8D%A2%E4%BD%8D%E6%80%9D%E8%80%83%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%B7%AE/</guid>
+      <description>换位思考如同su，信息差在于su - 的 -</description>
+    </item>
+    
     <item>
       <title>关于Raft</title>
       <link>https://ursasi.github.io/post/%E5%85%B3%E4%BA%8Eraft/</link>
@@ -60,23 +69,6 @@ Windows macOS Android iOS 连接机房 第一次连接机房机器需要启动�
 Windows macOS 连接实验室打印机 连接方式与在实验室环境下连接打印机方式类似，但添加打印纸需要通过IP添加。
 Windows macOS Android iOS 连接实验室网盘 连接方式与在实验室环境下连接网盘方式类似，但需要通过IP进行添加。
 为方便管理，请在网盘中以姓名拼音首字母缩写创建个人文件夹，例如周杰伦→ZJL 所有文件夹均无权限管理，切勿存放私密文件 Windows macOS Android iOS </description>
-    </item>
-    
-    <item>
-      <title>Git 相关规范</title>
-      <link>https://ursasi.github.io/post/git%E7%9B%B8%E5%85%B3/</link>
-      <pubDate>Wed, 11 Oct 2023 21:25:22 +0800</pubDate>
-      
-      <guid>https://ursasi.github.io/post/git%E7%9B%B8%E5%85%B3/</guid>
-      <description>Git 相关 Commit 一个好的 Commit Message 规范可以使 Commit Message 的可读性更好，并且可以实现自动化。那究竟如何写一个易读的 Commit Message 呢？
-在 Angular 规范中，Commit Message 包含三个部分，分别是 Header、Body 和 Footer， 格式如下：
-其中，Header 是必需的， Body 和 Footer 可以省略。在以上规范中，必须用括号（）括起来， ［］后必须紧跟冒号，冒号后必须紧跟空格，2个空行也是必需的。
-Header Header 部分只有一行，包括三个字段：type（必选）、scope（可选）和 subject（必选）。
-type是用来说明commit 的类型。为了方便记忆，我把这些类型做了归纳，它们主要可以归为 Development 和 Production 共两类。它们的含义是：
-Development：这类修改一般是项目管理类的变更，不会影响最终用户和生产环境的代码，比如 CI 流程、构建方式等的修改。遇到这类修改，通常也意味着可以免测发布。 Production：这类修改会影响最终的用户和生产环境的代码。所以对于这种改动，我们一定要慎重，并在提交前做好充分的测试。 以下列出一些常用的type、类别，在提交的时候请务必注意
-feat: Production 新增功能 fix: Production Bug 修复 docs: Development 文档更新 chore: Development 构建流程、辅助工具 Body Body 部分可以分成多行，而且格式也比较自由。不过，和 Header 里的一样，它也要以动词开头，使用现在时。此外，它还必须要包括修改的动机，以及和跟上一版本相比的改动点。
-Footer Footer 部分不是必选的，可以根据需要来选择，主要用来说明本次 commit 导致的后果。在实际应用中，Footer 通常用来说明不兼容的改动和关闭的Issue 列表。
-未完 </description>
     </item>
     
   </channel>
